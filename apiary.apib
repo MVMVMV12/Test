@@ -1,0 +1,27 @@
+FORMAT: 1A
+HOST: http://accountservices.apiblueprint.org/
+
+# MyBankAccountServicesMV
+
+MyBankAccountServices is a simple API to demonstration the use of Apiary and the concept of API Design First.
+
+## My Bank Account Balance [/accountBalance]
+
+### Get Bank Account [GET]
+Get the Bank Account details for your user
+
++ Response 200 (application/json)
+
+        [
+                        {
+                "accountNr" : "12345678",
+                "bankName" : "Allied Irish Banks plc.",
+                "branch" : "Artane Roundabout, Dublin 5",
+                "custFirstName" : "Milomir",
+                "custLastName" : "Vojvodic",
+                "custEmail" : "milomir.vojvodic@oracle.com",
+                "balance" : 23000,
+                "dateLastTransaction": "31st Oct. 2017"
+            }
+
+        ]
