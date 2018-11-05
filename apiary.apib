@@ -1,27 +1,35 @@
 FORMAT: 1A
-HOST: http://accountservices.apiblueprint.org/
+HOST: http://organizations.apiblueprint.org/
 
-# MyBankAccountServicesMV
+# OrganizationService
 
-MyBankAccountServices is a very simple API to demonstration the use of Apiary and the concept of API Design First.
+OrganizationService is an API for managing your Service Cloud Organizations
 
-## My Bank Account Balance [/accountBalances]
+## Organizations Collection [/organization]
 
-### Get Bank Account [GET]
-Get the Bank Account details for your user
 
-+ Response 200 (application/json)
+### Create an Organization [POST]
 
-        [
-                        {
-                "accountNr" : "12345678",
-                "bankName" : "Allied Irish Banks plc.",
-                "branch" : "Artane Roundabout, Dublin 5",
-                "custFirstName" : "Milomir",
-                "custLastName" : "Vojvodic",
-                "custEmail" : "milomir.vojvodic@oracle.com",
-                "balance" : 23000,
-                "dateLastTransaction": "31st Oct. 2017"
+
++ Request (application/json)
+
+        {
+            "orgName": "The Hare of the Dog Public House",
+            "contactFirstName": "Chris",
+            "contactLastName": "O'Connor",
+            "contactEmail": "cc@hotd.ie",
+            "country": "IE"            
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /organization/2
+
+    + Body
+
+            {
+                "orgId": "123",
+                "status": "New Org Created"
             }
-
-        ]
